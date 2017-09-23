@@ -1,15 +1,21 @@
-jQuery( function( $ ) {
-  $( '#another-quote' ).on( 'click', function ( e ) {
-    e.preventDefault();
-    $.ajax( {
-      url: 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
-      success: function ( data ) {
-        var post = data.shift(); // The data is an array of posts. Grab the first one.
-        $( '#quote-title' ).text( post.title );
-        $( '#quote-content' ).html( post.content );
-        $( '#twitter').href( post.Link );
-      },
-      cache: false
-    } );
-  } );
-} );
+$(document).ready(function() {
+ generateContent();
+});
+
+$('#another-quote').on('click', function() {
+ generateContent();
+});
+   
+function generateContent() {
+ $.ajax({
+   url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+   success: function (data) {
+     var post = data.shift();
+     $('.quote-content').html(post.content);
+     $('.quote-title').html(post.title);
+     tweet = post.content.replace(/(<p[^>]+?>|<p>|<\/p>)/img, "");
+     $("a").attr("href", "http://twitter.com/home?status=" + tweet + " " + post.link);
+   },
+     cache: false
+ });
+};

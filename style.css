@@ -1,25 +1,36 @@
+body {
+  font-size: 16px;
+}
+
 .box {
-  color: white;
-  font-size: 32px;
   text-align: center;
-  text-shadow: 4px 4px 0 rgba(0,0,0,0.1);
   padding: 10px;
 }
 
-.box1 {
-  border: 1px solid mistyrose;
-  color: black;
+.quote-content {
+  font-size: 1.2em;
 }
 
-.box2 {
+.quote-dash {
+  font-size: 1.7em;
+}
 
+.quote-title {
+  font-style: italic;
+  font-size: 1.7em;
 }
 
 .container {
   display: flex;
-  border: 10px solid goldenrod;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   min-height: 94vh;
+}
+
+footer {
+  font-size: 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

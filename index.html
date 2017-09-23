@@ -14,37 +14,42 @@
 
   <title>Random Quote Generator</title>
 
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link href="style.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" rel="stylesheet" type="text/css" />
+  <link href="style.css" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" />
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.js"></script>
   <![endif]-->
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
 <div class="container">
-  <div class="box box1">
-    <span class="fa fa-quote-left fa-pull-left"></span>
-    <div >
-      <span id="quote-title"></span>
-    </div>
-    <span class="fa fa-quote-right fa-pull-right"></span>
+  <div class="box">
     <div>
-      <span id="quote-content"></span>
+      <span class="fa fa-quote-left fa-pull-left"></span>
+      <span class="quote-content"></span>
+    </div>
+    <div>
+      <span class="quote-dash">-</span>
+      <span class="quote-title"></span>
     </div>
   </div>
-  <div class="box2">
-    <button type="button" id="another-quote" class="btn btn-dark">Get a new Quote!</button>
-    <a id="twitter" href="/">Tweet Me!</a>
+  <div>
+    <button type="button" id="another-quote" class="btn">Get a new Quote!</button>
+    <a class="waves-effect waves-light btn social twitter" id="twitter" href="/" target="_blank"> Tweet Me!</a>
   </div>
 </div>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-
+  <script href="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+  <script href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
+
+<footer>
+  <p>Copyright © A-J Roos 2017. All Rights Reserved</p>
+</footer>
 </html>
