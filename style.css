@@ -8,14 +8,10 @@ body {
 }
 
 .quote-content {
-  font-size: 1.2em;
+  font-size: 1.35em;
 }
 
-.quote-dash {
-  font-size: 1.7em;
-}
-
-.quote-title {
+.quote-title, .quote-dash {
   font-style: italic;
   font-size: 1.7em;
 }
@@ -33,4 +29,12 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px) {
+    .button-text {
+      margin-bottom: 10px;
+    }
 }
