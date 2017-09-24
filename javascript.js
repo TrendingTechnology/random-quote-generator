@@ -1,11 +1,12 @@
 $(document).ready(function() {
  generateContent();
+ animateColors();
 });
 
 $('#another-quote').on('click', function() {
  generateContent();
 });
-   
+
 function generateContent() {
  $.ajax({
    url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
@@ -18,4 +19,18 @@ function generateContent() {
    },
      cache: false
  });
+};
+
+function animateColors() {
+var animate_loop, colors, i;
+ colors = ['#FFB30C', '#58EC00', '#0087EC', '#EEEEEE', '#FF5A00'];
+ i = 0;
+ animate_loop = function() {
+   $('body').animate({
+     backgroundColor: colors[i++ % colors.length]
+   }, 2500, function() {
+     animate_loop();
+   });
+ };
+ animate_loop();
 };
