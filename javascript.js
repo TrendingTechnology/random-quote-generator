@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function() {
  generateContent();
  animateColors();
 });
@@ -9,7 +9,8 @@ $('#another-quote').on('click', function() {
 
 function generateContent() {
  $.ajax({
-   url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+   url: 'http://cors-proxy.htmldriven.com/?url=https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+   dataType: "json",
    success: function (data) {
      var post = data.shift();
      $('.quote-content').html(post.content);
