@@ -9,10 +9,11 @@ $('#another-quote').on('click', function() {
 
 function generateContent() {
  $.ajax({
-   url: 'http://cors-proxy.htmldriven.com/?url=https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+   url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
    dataType: "json",
    success: function (data) {
      var post = data.shift();
+     var tweet;
      $('.quote-content').html(post.content);
      $('.quote-title').html(post.title);
      tweet = post.content.replace(/(<p[^>]+?>|<p>|<\/p>)/img, "");
@@ -20,18 +21,18 @@ function generateContent() {
    },
      cache: false
  });
-};
+}
 
 function animateColors() {
-var animate_loop, colors, i;
- colors = ['#FFB30C', '#58EC00', '#0087EC', '#EEEEEE', '#FF5A00'];
- i = 0;
- animate_loop = function() {
-   $('body').animate({
-     backgroundColor: colors[i++ % colors.length]
-   }, 2500, function() {
-     animate_loop();
-   });
- };
- animate_loop();
-};
+  var animate_loop, colors, i;
+  colors = ['#FFB30C', '#58EC00', '#0087EC', '#EEEEEE', '#FF5A00'];
+  i = 0;
+  animate_loop = function() {
+    $('body').animate({
+      backgroundColor: colors[i++ % colors.length]
+    }, 3500, function() {
+      animate_loop();
+    });
+  };
+  animate_loop();
+}
