@@ -2,7 +2,7 @@
 
 ## This is a Random Quote Machine built for the freecodecamp curriculum
 
-![Screenshot of quote machine](https://github.com/Asjas/freecodecamp-random-quote-machine/img/quote-machine.webp "Quote Machine")
+![Screenshot of quote machine](https://github.com/Asjas/freecodecamp-random-quote-machine/blob/master/img/quote-machine.webp "Quote Machine")
 
 ### This project was built using the following
 
