@@ -1,31 +1,31 @@
 $(document).ready(function() {
- generateContent();
- animateColors();
+  generateContent();
+  animateColors();
 });
 
 $('#another-quote').on('click', function() {
- generateContent();
+  generateContent();
 });
 
 function generateContent() {
- $.ajax({
-   url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
-   dataType: "json",
-   success: function (data) {
-     var post = data.shift();
-     var tweet;
-     $('.quote-content').html(post.content);
-     $('.quote-title').html(post.title);
-     tweet = post.content.replace(/(<p[^>]+?>|<p>|<\/p>)/img, "");
-     $("a").attr("href", "http://twitter.com/home?status=" + tweet + " " + post.link);
-   },
-     cache: false
- });
+$.ajax({
+  url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+  dataType: "json",
+  success: function (data) {
+    var post = data.shift();
+    var tweet;
+    $('.quote-content').html(post.content);
+    $('.quote-title').html(post.title);
+    tweet = post.content.replace(/(<p[^>]+?>|<p>|<\/p>)/img, "");
+    $("a").attr("href", "https://twitter.com/intent/tweet?text=" + tweet + " " + post.link);
+  },
+    cache: false
+});
 }
 
 function animateColors() {
   var animate_loop, colors, i;
-  colors = ['#FFB30C', '#58EC00', '#0087EC', '#EEEEEE', '#FF5A00'];
+  colors = ['#B7D2FF', '#4FF2C6', '#E5FF89', '#FF8EAC', '#EC77FF'];
   i = 0;
   animate_loop = function() {
     $('body').animate({
