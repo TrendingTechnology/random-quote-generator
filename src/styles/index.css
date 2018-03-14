@@ -1,0 +1,9 @@
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  max-height: 100vh;
+  background: turquoise;
+}

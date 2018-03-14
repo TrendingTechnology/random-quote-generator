@@ -4,7 +4,7 @@ for = "/*"
 
 [headers.values]
 
-Content-Security-Policy = "frame-ancestors randomquotemachine.netlify.com"
+Content-Security-Policy = "frame-ancestors randomquotegenerator.netlify.com"
 Referrer-Policy = "strict-origin"
 Strict-Transport-Security = "max-age=31536000"
 X-Content-Type-Options = "nosniff"
@@ -15,11 +15,11 @@ proxy_hide_header = "X-Powered-By"
 
 [build.environment]
 
-NODE_VERSION = "8"
+NODE_VERSION = "9"
 YARN_VERSION = "0.28.4"
 
 [[redirects]]
-from = "http://randomquotemachine.netlify.com"
-to = "https://randomquotemachine.netlify.com:443"
+from = "http://randomquotegenerator.netlify.com"
+to = "https://randomquotegenerator.netlify.com:443"
 status = 301
 force = true

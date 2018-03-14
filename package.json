@@ -1,51 +1,29 @@
 {
-  "name": "random-quote-machine",
-  "version": "1.0.0",
-  "description": "Freecodecamp Random Quote Generator",
-  "main": "",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:Asjas/freecodecamp-random-quote-machine.git"
-  },
-  "author": "A-J Roos",
-  "licenses": [
-    {
-      "type": "Apache-2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0"
-    }
-  ],
-  "bugs": {
-    "url": "https://github.com/Asjas/freecodecamp-random-quote-machine/issues"
-  },
-  "homepage": "https://github.com/Asjas/freecodecamp-random-quote-machine#readme",
+  "name": "src",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "static-server": "^3.0.0"
+    "axios": "^0.18.0",
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "material-ui": "^0.20.0",
+    "normalize.css": "^8.0.0",
+    "prettier": "^1.11.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1"
   },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "del": "^3.0.0",
-    "eslint": "^4.15.0",
-    "eslint-config-airbnb-base": "12.1.0",
-    "eslint-plugin-import": "2.8.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.1.0",
-    "gulp-babel": "^7.0.0",
-    "gulp-clean-css": "^3.9.2",
-    "gulp-cssbeautify": "^1.0.0",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-plumber": "^1.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.3",
-    "gulp-uglify": "^3.0.0",
-    "imagemin-jpeg-recompress": "^5.1.0",
-    "imagemin-pngquant": "^5.0.1",
-    "prettier": "^1.9.2",
-    "prettier-eslint": "^8.7.1"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "lint": "eslint .",
+    "eject": "react-scripts eject"
   }
 }
