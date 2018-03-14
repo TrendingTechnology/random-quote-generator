@@ -1,18 +1,27 @@
-# Freecodecamp Random Quote Machine
+# Freecodecamp Random Quote Generator
 
-## This is a Random Quote Machine built for the freecodecamp curriculum
+[![Build Status](https://travis-ci.org/Asjas/freecodecamp-random-quote-generator.svg?branch=master)](https://travis-ci.org/Asjas/freecodecamp-random-quote-generator)
+[![Known Vulnerabilities](https://snyk.io/test/github/asjas/freecodecamp-random-quote-generator/badge.svg?targetFile=package.json)](https://snyk.io/test/github/asjas/freecodecamp-random-quote-generator?targetFile=package.json)
+[![dependencies Status](https://david-dm.org/asjas/freecodecamp-random-quote-generator/status.svg)](https://david-dm.org/asjas/freecodecamp-random-quote-generator)
+[![devDependencies Status](https://david-dm.org/asjas/freecodecamp-random-quote-generator/dev-status.svg)](https://david-dm.org/asjas/freecodecamp-random-quote-generator?type=dev)
+[![Coverage Status](https://coveralls.io/repos/github/Asjas/freecodecamp-random-quote-generator/badge.svg?branch=master)](https://coveralls.io/github/Asjas/freecodecamp-random-quote-generator?branch=master)
 
-![Screenshot of quote machine](https://github.com/Asjas/freecodecamp-random-quote-machine/blob/master/img/quote-machine.webp "Quote Machine")
+## This is the Random Quote Generator built for the freeCodeCamp Frontend Certification.
+
+![Screenshot of "Random Quote Generator"](https://myfiles.ams3.digitaloceanspaces.com/fCC-projects/github-readme-images/randomquotegenerator.jpg "Random Quote Generator")
 
 ### This project was built using the following
 
-* HTML
-* CSS
-* jQuery
-* jQuery Color
-* Materialize CSS
+* React
+* Material UI
 
-### The following requirements had to be met
+#### Running Project Locally
 
-1. You can click a button to show a new random quote
-2. You can press a button to tweet out the quote
+To get this project running locally you can do the following.
+
+```sh
+git clone git@github.com:Asjas/freecodecamp-random-quote-generator.git
+cd freecodecamp-random-quote-generator
+yarn install
+yarn run start
+```
