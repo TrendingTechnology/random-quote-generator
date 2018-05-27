@@ -36,7 +36,7 @@ class App extends Component {
         },
       })
       .then(response => {
-        const [quote, author] = Object.values(response.data);
+        const [quote, author] = Object.values(response.data[0]);
         const tweetURL = `https://twitter.com/intent/tweet?text="${quote}" - ${author}`;
         this.setState(() => ({ author, quote, tweetURL }));
       })
