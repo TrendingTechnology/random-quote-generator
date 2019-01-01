@@ -21,7 +21,7 @@ on Twitter.
 ### This project was built using the following:
 
 - React
-- Material UI
+- Material-UI
 
 ### The following packages and services are also used in the project:
 
