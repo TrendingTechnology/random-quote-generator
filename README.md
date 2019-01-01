@@ -1,6 +1,6 @@
 # Random Quote Generator
 
-[![Build Status](https://travis-ci.org/Asjas/freecodecamp-random-quote-generator.svg?branch=master)](https://travis-ci.org/Asjas/random-quote-generator)
+[![Build Status](https://travis-ci.org/Asjas/random-quote-generator.svg?branch=master)](https://travis-ci.org/Asjas/random-quote-generator)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![dependencies Status](https://david-dm.org/asjas/freecodecamp-random-quote-generator/status.svg)](https://david-dm.org/asjas/freecodecamp-random-quote-generator)
 [![devDependencies Status](https://david-dm.org/asjas/freecodecamp-random-quote-generator/dev-status.svg)](https://david-dm.org/asjas/freecodecamp-random-quote-generator?type=dev)
