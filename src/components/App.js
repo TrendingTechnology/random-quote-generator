@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Header from './Header.jsx';
-import DisplayQuote from './DisplayQuote.jsx';
-import Buttons from './Buttons.jsx';
-import Footer from './Footer.jsx';
+import Header from './Header';
+import DisplayQuote from './DisplayQuote';
+import Buttons from './Buttons';
+import Footer from './Footer';
+import hub from '../utils/sentry';
 
 const styles = {
   app: {
@@ -16,18 +17,13 @@ const styles = {
 };
 
 class App extends Component {
-  constructor() {
-    super();
+  state = {
+    author: '',
+    quote: '',
+    tweetURL: '',
+  };
 
-    this.state = {
-      author: '',
-      quote: '',
-      link: '',
-      tweetURL: '',
-    };
-  }
-
-  generateQuote = () => {
+  fetchQuoteFromAPI = () => {
     axios
       .get('https://andruxnet-random-famous-quotes.p.mashape.com/?count=1', {
         headers: {
@@ -37,24 +33,26 @@ class App extends Component {
       })
       .then(response => {
         const [quote, author] = Object.values(response.data[0]);
-        const tweetURL = `https://twitter.com/intent/tweet?text="${quote}" - ${author}`;
+        const tweetURL = `https://twitter.com/intent/tweet?text="${quote}" - ${author}. http://bit.ly/2s06P9n`;
         this.setState(() => ({ author, quote, tweetURL }));
       })
       .catch(err => {
-        console.log(`${err} whilst contacting the API.`);
+        console.error(err);
+        hub.captureException(err);
       });
   };
 
   componentDidMount = () => {
-    this.generateQuote();
+    this.fetchQuoteFromAPI();
   };
 
   render() {
+    const { author, quote, tweetURL } = this.state;
     return (
       <div className="app" style={styles.app}>
         <Header />
-        <DisplayQuote author={this.state.author} quote={this.state.quote} />
-        <Buttons generateQuote={this.generateQuote} tweetURL={this.state.tweetURL} />
+        <DisplayQuote author={author} quote={quote} />
+        <Buttons fetchQuoteFromAPI={this.fetchQuoteFromAPI} tweetURL={tweetURL} />
         <Footer />
       </div>
     );

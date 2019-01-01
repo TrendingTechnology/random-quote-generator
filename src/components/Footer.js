@@ -8,10 +8,12 @@ const styles = {
   },
 };
 
-const Footer = () => (
-  <footer className="footer" style={styles.footer}>
-    Created by A-J Roos
-  </footer>
-);
+const Footer = React.memo(function footer() {
+  return (
+    <footer className="footer" style={styles.footer}>
+      Created by A-J Roos
+    </footer>
+  );
+});
 
 export default Footer;

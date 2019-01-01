@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
 import Send from 'material-ui/svg-icons/content/send';
 
@@ -9,23 +10,26 @@ const styles = {
 };
 
 class TweetButton extends Component {
-  handleButtonClick = () => {
-    console.log(this.props.tweetURL);
-    window.location.href = this.props.tweetURL;
+  handleClick = () => {
+    window.open(this.props.tweetURL, 'noopener');
   };
 
   render() {
     return (
       <RaisedButton
+        style={styles.button}
         label="Tweet"
         labelPosition="before"
-        primary={true}
         icon={<Send />}
-        style={styles.button}
-        onClick={this.handleButtonClick}
+        onClick={this.handleClick}
+        primary
       />
     );
   }
 }
+
+TweetButton.propTypes = {
+  tweetURL: PropTypes.string.isRequired,
+};
 
 export default TweetButton;
