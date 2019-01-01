@@ -11,7 +11,7 @@ const styles = {
 const Footer = React.memo(function footer() {
   return (
     <footer className="footer" style={styles.footer}>
-      Created by A-J Roos
+      <p>Created by A-J Roos</p>
     </footer>
   );
 });
