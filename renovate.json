@@ -2,5 +2,17 @@
   "extends": ["config:base"],
   "assignees": ["asjas"],
   "assignAutomerge": true,
-  "labels": ["renovate-bot"]
+  "labels": ["renovate-bot"],
+  "packageRules": [
+    {
+      "packagePatterns": ["eslint"],
+      "groupName": "eslint"
+    },
+    {
+      "packagePatterns": ["react"],
+      "groupName": "react"
+    }
+  ],
+  "automerge": true,
+  "automergeType": "branch"
 }
