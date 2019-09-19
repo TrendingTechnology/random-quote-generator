@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
 import AutoRenew from 'material-ui/svg-icons/action/autorenew';
@@ -6,21 +6,20 @@ import AutoRenew from 'material-ui/svg-icons/action/autorenew';
 const styles = {
   button: {
     margin: 12,
+    fontFamily: 'Montserrat, sans-serif',
   },
 };
 
-const QuoteButton = React.memo(function QuoteButton({ fetchQuoteFromAPI }) {
-  return (
-    <RaisedButton
-      style={styles.button}
-      label="New Quote"
-      labelPosition="before"
-      icon={<AutoRenew />}
-      onClick={fetchQuoteFromAPI}
-      primary
-    />
-  );
-});
+const QuoteButton = ({ fetchQuoteFromAPI }) => (
+  <RaisedButton
+    style={styles.button}
+    label="Get new quote"
+    labelPosition="before"
+    icon={<AutoRenew />}
+    onClick={fetchQuoteFromAPI}
+    primary
+  />
+);
 
 QuoteButton.displayName = 'QuoteButton';
 
@@ -28,4 +27,4 @@ QuoteButton.propTypes = {
   fetchQuoteFromAPI: PropTypes.func.isRequired,
 };
 
-export default QuoteButton;
+export default memo(QuoteButton);

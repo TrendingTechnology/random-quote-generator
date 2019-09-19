@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
+
 import Header from './Header';
 import DisplayQuote from './DisplayQuote';
 import Buttons from './Buttons';
-import Footer from './Footer';
+
 import hub from '../utils/sentry';
 
 const styles = {
@@ -16,14 +17,12 @@ const styles = {
   },
 };
 
-class App extends Component {
-  state = {
-    author: '',
-    quote: '',
-    tweetURL: '',
-  };
+const INITIAL_STATE = { author: '', quoteText: '', tweetURL: '' };
 
-  fetchQuoteFromAPI = () => {
+const App = () => {
+  const [quoteObj, setQuote] = useState(INITIAL_STATE);
+
+  const fetchQuoteFromAPI = useCallback(() => {
     axios
       .get('https://andruxnet-random-famous-quotes.p.mashape.com/?count=1', {
         headers: {
@@ -34,29 +33,27 @@ class App extends Component {
       .then(response => {
         const [quote, author] = Object.values(response.data[0]);
         const tweetURL = `https://twitter.com/intent/tweet?text="${quote}" - ${author}. http://bit.ly/2s06P9n`;
-        this.setState(() => ({ author, quote, tweetURL }));
+        setQuote({ author, quote, tweetURL });
       })
       .catch(err => {
         console.error(err);
         hub.captureException(err);
       });
-  };
+  }, []);
 
-  componentDidMount = () => {
-    this.fetchQuoteFromAPI();
-  };
+  useEffect(() => {
+    fetchQuoteFromAPI();
+  }, [fetchQuoteFromAPI]);
 
-  render() {
-    const { author, quote, tweetURL } = this.state;
-    return (
-      <div className="app" style={styles.app}>
-        <Header />
-        <DisplayQuote author={author} quote={quote} />
-        <Buttons fetchQuoteFromAPI={this.fetchQuoteFromAPI} tweetURL={tweetURL} />
-        <Footer />
-      </div>
-    );
-  }
-}
+  const { author, quote, tweetURL } = quoteObj;
+
+  return (
+    <div className="app" style={styles.app}>
+      <Header />
+      <DisplayQuote author={author} quote={quote} />
+      <Buttons fetchQuoteFromAPI={fetchQuoteFromAPI} tweetURL={tweetURL} />
+    </div>
+  );
+};
 
 export default App;

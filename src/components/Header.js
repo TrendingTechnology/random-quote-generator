@@ -9,12 +9,10 @@ const styles = {
   },
 };
 
-const Header = React.memo(function Header() {
-  return (
-    <header className="header" style={styles.header}>
-      Random Quote Generator
-    </header>
-  );
-});
+const Header = () => (
+  <header className="header" style={styles.header}>
+    Random Quote Generator
+  </header>
+);
 
 export default Header;
