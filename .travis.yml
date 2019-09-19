@@ -1,4 +1,10 @@
 dist: bionic
+
+addons:
+  apt:
+    packages:
+      - libgconf-2-4
+
 language: node_js
 
 node_js:
@@ -10,7 +16,13 @@ node_js:
 git:
   quiet: true
 
-cache: yarn
+cache:
+  yarn: true
+  directories:
+    - ~/.cache
+
+install:
+  - yarn install --frozen-lockfile
 
 script:
   - "yarn lint"
