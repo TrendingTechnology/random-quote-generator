@@ -2,13 +2,14 @@ dist: trusty
 language: node_js
 
 node_js:
-  - 'lts/*'
-  - '9'
+  - "8"
+  - "10"
+  - "11"
 
-cache: npm
+cache: yarn
 
 sudo: false
 
 script:
-  - 'npm run lint'
-  - 'npm run build'
+  - "yarn lint"
+  - "yarn build"
