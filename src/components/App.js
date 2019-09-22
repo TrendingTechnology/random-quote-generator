@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 import Header from './Header';
 import DisplayQuote from './DisplayQuote';
@@ -48,11 +49,25 @@ const App = () => {
   const { author, quote, tweetURL } = quoteObj;
 
   return (
-    <div className="app" style={styles.app}>
-      <Header />
-      <DisplayQuote author={author} quote={quote} />
-      <Buttons fetchQuoteFromAPI={fetchQuoteFromAPI} tweetURL={tweetURL} />
-    </div>
+    <>
+      <Helmet>
+        {/* Global site tag (gtag.js) - Google Analytics  */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112825816-5" />
+        <script>
+          {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'UA-112825816-5');
+            `}
+        </script>
+      </Helmet>
+      <div className="app" style={styles.app}>
+        <Header />
+        <DisplayQuote author={author} quote={quote} />
+        <Buttons fetchQuoteFromAPI={fetchQuoteFromAPI} tweetURL={tweetURL} />
+      </div>
+    </>
   );
 };
 
