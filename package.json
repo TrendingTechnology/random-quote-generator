@@ -17,8 +17,8 @@
     "logrocket-react": "3.0.1",
     "material-ui": "0.20.2",
     "prop-types": "15.7.2",
-    "react": "16.9.0",
-    "react-dom": "16.9.0",
+    "react": "16.10.0",
+    "react-dom": "16.10.0",
     "react-helmet": "6.0.0-beta",
     "react-scripts": "3.1.2"
   },
